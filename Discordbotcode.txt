@@ -1,0 +1,118 @@
+//Open source code using the discord.js API in JavaScript
+
+
+const Discord = require("discord.js");
+const music = require('discord.js-music-v11');
+var koala = new Discord.Client();
+koala.login('your token here');
+
+
+function playgame(humanchoice){ //this function is for the rock paper scissors game
+	var randomnumber = Math.Random();
+  	if (randomnumber > 0.66){var aichoice = "rock"}
+  	else if (randomnumber < 0.33){var aichoice = "paper"}
+  	else{var aichoice = "scissors"}
+
+}
+
+koala.on('ready', () => {
+  console.log('I am ready!');
+});
+
+koala.on('message', message => {
+  
+  if (message.content === '!listentome') {
+    message.reply("Hearing you loud and clear! - Availible commands are: weather, news, random, redditrandom");
+  }
+  else if(message.content === "!listentome weather"){
+  	message.reply("This is only temporary until I can figure out the weather API - http://www.bbc.co.uk/weather/");
+  }
+  else if (message.content === "!listentome random"){
+  	message.reply("http://imgur.com/gallery/random");
+  }
+  else if (message.content === "!listentome news"){
+  	message.reply("again, this is only temporary - http://www.bbc.co.uk/news/")
+  }
+  else if(message.content === "!listentome rock"){
+  		var randomnumber = Math.random();
+  	if (randomnumber > 0.66){
+  		var aichoice = "rock";
+  	}
+  	else if (randomnumber < 0.33){
+  		var aichoice = "paper";
+  	}
+  	else{
+  		var aichoice = "scissors";
+  	}
+  	switch (aichoice){
+  		case 'rock':
+  			message.reply("It's a tie!");
+  			break;
+  		case 'paper':
+  			message.reply("I win with Paper!");
+  			break;
+  		case 'scissors':
+  			message.reply("I lose with scissors!");
+  			break;
+  		default:
+  			console.log("error");
+  			break;
+
+  	};
+  }
+  else if(message.content === "!listentome paper"){
+   		var randomnumber = Math.random();
+  	if (randomnumber > 0.66){
+  		var aichoice = "rock";
+  	}
+  	else if (randomnumber < 0.33){
+  		var aichoice = "paper";
+  	}
+  	else{
+  		var aichoice = "scissors";
+  	}
+  	switch (aichoice){
+  		case 'rock':
+  			message.reply("I lose with Rock!");
+  			break;
+  		case 'paper':
+  			message.reply("It's a tie!");
+  			break;
+  		case 'scissors':
+  			message.reply("I win with Scissors!");
+  			break;
+  		default:
+  			console.log("error");
+  			break;
+
+  	}; 	
+
+  }
+  else if(message.content === "!listentome scissors"){
+  		var randomnumber = Math.random();
+  	if (randomnumber > 0.66){
+  		var aichoice = "rock";
+  	}
+  	else if (randomnumber < 0.33){
+  		var aichoice = "paper";
+  	}
+  	else{
+  		var aichoice = "scissors";
+  	}
+  	switch (aichoice){
+  		case 'rock':
+  			message.reply("I win with Rock!");
+  			break;
+  		case 'paper':
+  			message.reply("I lose with Paper!");
+  			break;
+  		case 'scissors':
+  			message.reply("It's a tie!");
+  			break;
+  		default:
+  			console.log("error");
+  			break;
+
+  	};
+  }
+});
